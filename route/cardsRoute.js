@@ -13,7 +13,8 @@ function schemaCard(){
     titleCard:        Joi.string().required().description('Card title will be display on app'),
     descriptonCard:   Joi.string().required().description('Description Card'),
     idUser:           Joi.number().description('Id user that created the card'),
-    active:           Joi.boolean().required().description('need to be active first time')
+    active:           Joi.boolean().required().description('need to be active first time'),
+    idDeck:           Joi.number().description('in witch deck is the card')
   };
   return queryObj;
 }
@@ -24,7 +25,8 @@ function schemaUpdateCard(){
   queryObj = {
     titleCard:        Joi.string().required().description('Card title will be display on app'),
     descriptonCard:   Joi.string().required().description('Description Card'),
-    active:           Joi.boolean().required().description('virtual delete')
+    active:           Joi.boolean().required().description('virtual delete'),
+    idDeck:           Joi.number().required().description('in witch deck is the card')
   };
   return queryObj;
 }
@@ -49,18 +51,18 @@ module.exports = [{
 },
 {
   method:'POST',
-  path: '/xpressCards/api/updateOneCard',
+  path: '/xpressCards/api/createOneCard',
   config: {
     handler(req, reply){
       const title = req.payload.titleCard;
       const description = req.payload.descriptonCard;
       const idUser = req.payload.idUser;
-      const active = req.payload.active
+      const active = req.payload.active;
+      const idDeck = req.payload.active;
 
+      log.info('Calling /xpressCards/api/createOneCard');
 
-      log.info('Calling /xpressCards/api/updateOneCard');
-
-      cardsService.addNewCard(title, description, idUser, active)
+      cardsService.addNewCard(title, description, idUser, active, idDeck)
         .then(function(){
           reply('sucess').code(200);
         });
@@ -75,17 +77,18 @@ module.exports = [{
 },
 {
     method: 'PATCH',
-    path: '/xpressCards/api/updateOneCard/{id}',
+    path: '/xpressCards/api/updateOneCardBy/{id}',
     config:{
       handler(req, reply){
         const title = req.payload.titleCard;
         const description = req.payload.descriptonCard;
         const idCard = req.params.id;
         const active = req.payload.active
+        const idDeck = req.payload.idDeck;
 
-        log.info('Calling /xpressCards/api/updateOneCard/{id}');
+        log.info('Calling /xpressCards/api/updateOneCardBy/{id}');
 
-        cardsService.updateNewCard(title, description, active, idCard)
+        cardsService.updateNewCardBy(title, description, active, idDeck, idCard)
           .then(function(){
             reply('succes').code(200);
           });
@@ -122,5 +125,26 @@ module.exports = [{
       description: 'Update one card by id',
       tags: ['api', 'Cards'],
     }
-}
-];
+},
+{
+  method: 'GET',
+  path: '/xpressCards/api/getOneCardById/{id}',
+  config: {
+    handler(req, reply) {
+      const idCard = req.params.id;
+      log.info('Calling /xpressCards/api/getOneCardById/{id}');
+
+      cardsService.getCardById(idCard)
+        .then(function(result){
+          reply(result).code(200);
+        });
+    },
+    validate:{
+      params: {
+        id: Joi.number().required().description('Id Card to update')
+      }
+    },
+    description: 'Get All Cards',
+    tags: ['api', 'Cards'],
+  }
+}];
