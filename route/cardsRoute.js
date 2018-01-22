@@ -14,7 +14,8 @@ function schemaCard(){
     descriptonCard:   Joi.string().required().description('Description Card'),
     idUser:           Joi.number().description('Id user that created the card'),
     active:           Joi.boolean().required().description('need to be active first time'),
-    idDeck:           Joi.number().description('in witch deck is the card')
+    idDeck:           Joi.number().description('in witch deck is the card'),
+    UrlImgVideo:      Joi.string().required().description('Img or Video url')
   };
   return queryObj;
 }
@@ -26,7 +27,8 @@ function schemaUpdateCard(){
     titleCard:        Joi.string().required().description('Card title will be display on app'),
     descriptonCard:   Joi.string().required().description('Description Card'),
     active:           Joi.boolean().required().description('virtual delete'),
-    idDeck:           Joi.number().required().description('in witch deck is the card')
+    idDeck:           Joi.number().required().description('in witch deck is the card'),
+    UrlImgVideo:      Joi.string().required().description('Img or Video url')
   };
   return queryObj;
 }
@@ -59,10 +61,11 @@ module.exports = [{
       const idUser = req.payload.idUser;
       const active = req.payload.active;
       const idDeck = req.payload.active;
+      const UrlImgVideo = req.payload.UrlImgVideo;
 
       log.info('Calling /xpressCards/api/createOneCard');
 
-      cardsService.addNewCard(title, description, idUser, active, idDeck)
+      cardsService.addNewCard(title, description, idUser, active, idDeck, UrlImgVideo)
         .then(function(){
           reply('sucess').code(200);
         });
@@ -85,10 +88,11 @@ module.exports = [{
         const idCard = req.params.id;
         const active = req.payload.active
         const idDeck = req.payload.idDeck;
+        const UrlImgVideo = req.payload.UrlImgVideo;
 
         log.info('Calling /xpressCards/api/updateOneCardBy/{id}');
 
-        cardsService.updateNewCardBy(title, description, active, idDeck, idCard)
+        cardsService.updateNewCardBy(title, description, active, idDeck, UrlImgVideo, idCard)
           .then(function(){
             reply('succes').code(200);
           });

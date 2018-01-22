@@ -23,7 +23,7 @@
     "url": "https://github.com/MarcosDanMtz/xpressServices/issues"
   },
   "homepage": "https://github.com/MarcosDanMtz/xpressServices#readme",
-    "dependencies": {
+  "dependencies": {
     "bunyan": "^1.8.10",
     "bunyan-rotating-file-stream": "^1.6.2",
     "boom": "^5.2.0",
