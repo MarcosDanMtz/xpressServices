@@ -6,7 +6,7 @@ const Vision        = require('vision');
 const HapiSwagger   = require('hapi-swagger');
 const routes        = require('./route/routes.js');
 const server        = new Hapi.Server();
-var port            = process.env.PORT || 3001;
+var port            = process.env.PORT || 3000;
 const crypto        = require('./lib/util/cryptoUtil');
 
 const optionsSwager =
@@ -18,7 +18,7 @@ const optionsSwager =
     grouping: 'tags'
 };
 
-// console.log(crypto.encrypt(''));
+// console.log(crypto.encrypt('Innovation_123'));
 server.connection({ port: port});
 
 server.route(routes);

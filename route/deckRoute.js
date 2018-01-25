@@ -25,8 +25,8 @@ function schemaUpdateDeck(){
   queryObj = {
     title:        Joi.string().required().description('deck title will be display on app'),
     description:  Joi.string().required().description('Description deck'),
-    results:      Joi.string().required().description('Primary results of deck'),
-    active:       Joi.boolean().required().description('Virtual delete'),
+    results:      Joi.string().description('Primary results of deck'),
+    active:       Joi.boolean().description('Virtual delete'),
     UrlImgVideo:  Joi.string().required().description('url image deck')
 
   };
@@ -49,6 +49,24 @@ module.exports = [{
 
     },
     description: 'Get All Decks',
+    tags: ['api', 'Deck'],
+  }
+},
+{
+  method: 'GET',
+  path: '/xpressDeck/api/activeDecks',
+  config: {
+    handler(req, reply) {
+
+      log.info('Calling /xpressDeck/api/activeDecks');
+
+      deckService.getActiveDecks()
+        .then(function(result){
+          reply(result).code(200);
+        });
+
+    },
+    description: 'Get acrtive Decks',
     tags: ['api', 'Deck'],
   }
 },

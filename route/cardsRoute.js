@@ -52,6 +52,28 @@ module.exports = [{
   }
 },
 {
+  method: 'GET',
+  path: '/xpressCards/api/getCardsByIdDeck/{idDeck}',
+  config: {
+    handler(req, reply) {
+      const idDeck = req.params.idDeck;
+      log.info('/xpressCards/api/getCardsByIdDeck/{idDeck}');
+
+      cardsService.getCardByIdDeck(idDeck)
+        .then(function(result){
+          reply(result).code(200);
+        });
+    },
+    validate:{
+      params: {
+        idDeck: Joi.number().required().description('Id Card to update')
+      }
+    },
+    description: 'Get All Cards',
+    tags: ['api', 'Cards'],
+  }
+},
+{
   method:'POST',
   path: '/xpressCards/api/createOneCard',
   config: {

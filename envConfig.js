@@ -20,10 +20,11 @@ let xpressRepository = '';
 xpressRepository = {
   db:'xpress',
   host:'127.0.0.1',
-  //host:'127.0.0.1',
   user:'JcD4reMu/wYATnzq0sU0jg==',
   pwd:'ZYzt8+3BBFtFBLDD67JFZg=='
-  // pwd:'iVS4zHeEos2OeO/gSD3pNw=='
+  // host:'104.131.130.192',
+  // user:'GKvuPiC+I6AHbN6GyoY+UQ==',
+  // pwd:'rKaJp5XU0qgkSl8/wFLfag=='
 };
 
 module.exports = {
