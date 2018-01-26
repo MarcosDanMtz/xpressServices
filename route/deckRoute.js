@@ -8,12 +8,13 @@ const deckService  = require('../lib/services/deck.service');
 
 function schemaDeck(){
   let queryObj = {};
-
   queryObj = {
     title:        Joi.string().required().description('deck title will be display on app'),
     description:  Joi.string().required().description('Description deck'),
     idUser:       Joi.number().required().description('Id user that created the deck'),
-    UrlImgVideo:  Joi.string().required().description('url image deck')
+    UrlImgVideo:  Joi.string().required().description('url image deck'),
+    EvaluatePeopleThings:  Joi.boolean().required().description('are you goin to evaluate something'),
+    IMGVideoFromPT:  Joi.boolean().required().description('Take Img or video from People or things to evaluate table')
   };
   return queryObj;
 }
@@ -27,8 +28,9 @@ function schemaUpdateDeck(){
     description:  Joi.string().required().description('Description deck'),
     results:      Joi.string().description('Primary results of deck'),
     active:       Joi.boolean().description('Virtual delete'),
-    UrlImgVideo:  Joi.string().required().description('url image deck')
-
+    UrlImgVideo:  Joi.string().required().description('url image deck'),
+    EvaluatePeopleThings:  Joi.boolean().required().description('are you goin to evaluate something'),
+    IMGVideoFromPT:  Joi.boolean().required().description('Take Img or video from People or things to evaluate table')
   };
   return queryObj;
 }
@@ -101,10 +103,12 @@ module.exports = [{
       const description = req.payload.description;
       const idUser = req.payload.idUser;
       const UrlImgVideo = req.payload.UrlImgVideo;
+      const EvaluatePeopleThings = req.payload.EvaluatePeopleThings;
+      const IMGVideoFromPT = req.payload.IMGVideoFromPT;
 
       log.info('Calling /xpressDeck/api/createOneNewDeck');
 
-      deckService.addNewDeck(title, description, idUser, UrlImgVideo)
+      deckService.addNewDeck(title, description, idUser, UrlImgVideo, EvaluatePeopleThings, IMGVideoFromPT)
         .then(function(){
           reply('sucess').code(200);
         });
@@ -127,11 +131,13 @@ module.exports = [{
         const results = req.payload.results;
         const active = req.payload.active;
         const UrlImgVideo = req.payload.UrlImgVideo;
+        const EvaluatePeopleThings = req.payload.EvaluatePeopleThings;
+        const IMGVideoFromPT = req.payload.IMGVideoFromPT;
         const idDeck = req.params.id;
 
         log.info('Calling /xpressDeck/api/updateOneDeckBy/{id}');
 
-        deckService.updateDeckBy(title, description, results, active, UrlImgVideo, idDeck)
+        deckService.updateDeckBy(title, description, results, active, UrlImgVideo, EvaluatePeopleThings, IMGVideoFromPT, idDeck)
           .then(function(){
             reply('succes').code(200);
           });

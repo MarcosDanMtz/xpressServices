@@ -82,7 +82,7 @@ module.exports = [{
       const description = req.payload.descriptonCard;
       const idUser = req.payload.idUser;
       const active = req.payload.active;
-      const idDeck = req.payload.active;
+      const idDeck = req.payload.idDeck;
       const UrlImgVideo = req.payload.UrlImgVideo;
 
       log.info('Calling /xpressCards/api/createOneCard');

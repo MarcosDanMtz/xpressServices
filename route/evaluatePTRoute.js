@@ -11,7 +11,8 @@ function schemaPeopleThings(){
     queryObj = {
         NameObject:         Joi.string().description('Name of user o thing'),
         DescriptioObject:   Joi.string().description('description of people or thing'),
-        isAssociate:        Joi.boolean().description('is an associate')
+        isAssociate:        Joi.boolean().description('is an associate'),
+        ImgVideoURL:        Joi.string().description('img or video url')
     };
     return queryObj;
 }
@@ -21,7 +22,8 @@ function schemaPeopleThingsUpdate(){
     queryObj = {
         NameObject:         Joi.string().description('Name of user o thing'),
         DescriptioObject:   Joi.string().description('description of people or thing'),
-        isAssociate:        Joi.boolean().description('is an associate')
+        isAssociate:        Joi.boolean().description('is an associate'),
+        ImgVideoURL:        Joi.string().description('img or video url')
     };
     return queryObj;
 }
@@ -75,10 +77,11 @@ module.exports = [{
         const NameObject = req.payload.NameObject;
         const DescriptioObject = req.payload.DescriptioObject;
         const isAssociate = req.payload.isAssociate;
+        const ImgVideoURL = req.payload.ImgVideoURL;
   
         log.info('Calling /xpressPeopleThings/api/createPT');
   
-        PTService.addPT(NameObject, DescriptioObject, isAssociate)
+        PTService.addPT(NameObject, DescriptioObject, isAssociate, ImgVideoURL)
           .then(function(){
             reply('sucess').code(200);
           });
@@ -100,12 +103,13 @@ module.exports = [{
         const NameObject = req.payload.NameObject;
         const DescriptioObject = req.payload.DescriptioObject;
         const isAssociate = req.payload.isAssociate;
+        const ImgVideoURL = req.payload.ImgVideoURL;
         const IdThingPeople = req.params.id;
         
 
         log.info('Calling /xpressPeopleThings/api/updatePTBy/{id}');
 
-        PTService.updatePT(NameObject, DescriptioObject, isAssociate, IdThingPeople)
+        PTService.updatePT(NameObject, DescriptioObject, isAssociate, ImgVideoURL, IdThingPeople)
           .then(function(){
             reply('succes').code(200);
           });
