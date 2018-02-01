@@ -11,7 +11,8 @@ function schemaVotesCards(){
     queryObj = {
         idCard:         Joi.number().description('id Cards to update'),
         idAssociate:    Joi.number().description('id Associate to update'),
-        idToEvaluate:   Joi.number().description('id of the thing or people to evaluate')
+        idToEvaluate:   Joi.number().description('id of the thing or people to evaluate'),
+        vote:           Joi.boolean().description('like or not')
     };
     return queryObj;
 }
@@ -100,10 +101,11 @@ module.exports = [{
         const idCard = req.payload.idCard;
         const idAssociate = req.payload.idAssociate;
         const idToEvaluate = req.payload.idToEvaluate;
+        const vote = req.payload.vote;
   
         log.info('Calling /xpressVotesCards/api/createVoteCards');
   
-        VotesCardsService.addVotesCard(idCard, idAssociate, idToEvaluate)
+        VotesCardsService.addVotesCard(idCard, idAssociate, vote, idToEvaluate)
           .then(function(){
             reply('sucess').code(200);
           });

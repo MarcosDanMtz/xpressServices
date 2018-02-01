@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `xpress` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `xpress`;
 -- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
 --
 -- Host: 127.0.0.1    Database: xpress
@@ -42,7 +44,7 @@ CREATE TABLE `Card` (
 
 LOCK TABLES `Card` WRITE;
 /*!40000 ALTER TABLE `Card` DISABLE KEYS */;
-INSERT INTO `Card` VALUES (15,'postTitle','postDescription','2018-01-22 09:13:04',NULL,1,1,1,'posrturlimg'),(16,'updateTitle','update description','2018-01-22 09:13:35','2018-01-22 09:14:19',0,0,10,'img url'),(17,'Do you know?','Angular','2018-01-25 16:57:43',NULL,16,1,1,'http://res.cloudinary.com/dnakveysz/image/upload/v1516921038/Angular2-min_elcvix.png'),(20,'Do you know?','Angular','2018-01-26 08:04:40',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516921038/Angular2-min_elcvix.png'),(21,'Do you know?','Java','2018-01-26 08:31:17',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516976987/java-min_nigtij.jpg'),(22,'Do you know?','CSS3','2018-01-26 08:31:49',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516976987/css3-min_xe2smc.jpg'),(23,'Do you know?','HTML5','2018-01-26 08:32:34',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/html5-min_vnd7if.png'),(24,'Do you know?','JavaScript','2018-01-26 08:32:58',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/js-min_bzhuxq.png'),(25,'Do you know?','Git','2018-01-26 08:33:21',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516976987/git-logo-min_glfmcr.jpg'),(26,'Do you know?','NodeJS','2018-01-26 08:33:54',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/nodejs-min_xsu4c7.png'),(27,'Do you know?','Python','2018-01-26 08:34:27',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/python-min_mnvnjn.png'),(28,'Do you know?','Apache Spark','2018-01-26 08:35:05',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/Apache_Spark-min_ergez1.png'),(29,'Do you know?','Apache Kafka','2018-01-26 08:35:49',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/apache-kafka-min_lrb26z.png'),(30,'Do you know?','Cassandra','2018-01-26 08:36:23',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/Cassandra-min_jhovpb.png'),(31,'Do you know?','Linux','2018-01-26 08:37:02',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/Linux-min_o19xxt.png'),(32,'Do you have','self confidence','2018-01-26 10:13:29',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982950/self-confidence-min_nyuneb.jpg'),(33,'Do you have','Ability to make decisions','2018-01-26 10:16:10',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982950/toma-decisiones-min_ctttxf.jpg'),(34,'Are you','Communicative','2018-01-26 10:17:49',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/cmunicativo-min_zsudvz.jpg'),(35,'Do you have?','Emotional self-control','2018-01-26 10:25:55',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/autocontrol-min_g9pwbh.jpg'),(36,'Are you','Planification and organization','2018-01-26 11:04:20',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982950/organizacion-min_por3cl.jpg'),(37,'Are you','Empathic','2018-01-26 11:05:28',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/empatico-min_bmknmy.jpg'),(38,'Are you','Cooperative','2018-01-26 11:06:39',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/cooperativo-min_pd9n3d.jpg'),(39,'Are you','Fair','2018-01-26 11:08:46',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/justice-min_tkt0db.jpg'),(40,'Are you','Easy communication','2018-01-26 11:10:34',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/claridadMensaje-min_keuwgw.jpg'),(41,'Are you','Responsible','2018-01-26 11:11:39',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/responsable-min_njix78.jpg'),(42,'Are you','Optimistic','2018-01-26 11:12:47',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982950/optimismo-min_kplrla.jpg'),(43,'Are you','Strategic thinking','2018-01-26 11:14:11',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/estrategico-min_iumbdz.jpg'),(44,'Are you','Willing to take risks','2018-01-26 11:15:44',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/riesgos-min_oh6gle.jpg'),(45,'Are you','Enabler and not controller','2018-01-26 11:16:52',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982950/HabilitadorControlador-min_ftlpqf.jpg'),(46,'Are you','Future vision','2018-01-26 11:17:34','2018-01-26 11:20:31',16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982950/visionFuturo-min_tfe1cx.jpg');
+INSERT INTO `Card` VALUES (15,'postTitle','postDescription','2018-01-22 09:13:04','2018-01-29 10:41:34',1,1,4,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/autocontrol-min_g9pwbh.jpg'),(16,'updateTitle','update description','2018-01-22 09:13:35','2018-01-29 10:42:24',0,1,4,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/cooperativo-min_pd9n3d.jpg'),(17,'Do you know?','Angular','2018-01-25 16:57:43',NULL,16,1,1,'http://res.cloudinary.com/dnakveysz/image/upload/v1516921038/Angular2-min_elcvix.png'),(20,'Do you know?','Angular','2018-01-26 08:04:40',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516921038/Angular2-min_elcvix.png'),(21,'Do you know?','Java','2018-01-26 08:31:17',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516976987/java-min_nigtij.jpg'),(22,'Do you know?','CSS3','2018-01-26 08:31:49',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516976987/css3-min_xe2smc.jpg'),(23,'Do you know?','HTML5','2018-01-26 08:32:34',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/html5-min_vnd7if.png'),(24,'Do you know?','JavaScript','2018-01-26 08:32:58',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/js-min_bzhuxq.png'),(25,'Do you know?','Git','2018-01-26 08:33:21',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516976987/git-logo-min_glfmcr.jpg'),(26,'Do you know?','NodeJS','2018-01-26 08:33:54',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/nodejs-min_xsu4c7.png'),(27,'Do you know?','Python','2018-01-26 08:34:27',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/python-min_mnvnjn.png'),(28,'Do you know?','Apache Spark','2018-01-26 08:35:05',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/Apache_Spark-min_ergez1.png'),(29,'Do you know?','Apache Kafka','2018-01-26 08:35:49',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/apache-kafka-min_lrb26z.png'),(30,'Do you know?','Cassandra','2018-01-26 08:36:23',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/Cassandra-min_jhovpb.png'),(31,'Do you know?','Linux','2018-01-26 08:37:02',NULL,16,1,5,'http://res.cloudinary.com/dnakveysz/image/upload/v1516977009/Linux-min_o19xxt.png'),(32,'Do you have','self confidence','2018-01-26 10:13:29',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982950/self-confidence-min_nyuneb.jpg'),(33,'Do you have','Ability to make decisions','2018-01-26 10:16:10',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982950/toma-decisiones-min_ctttxf.jpg'),(34,'Are you','Communicative','2018-01-26 10:17:49',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/cmunicativo-min_zsudvz.jpg'),(35,'Do you have?','Emotional self-control','2018-01-26 10:25:55',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/autocontrol-min_g9pwbh.jpg'),(36,'Are you','Planification and organization','2018-01-26 11:04:20',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982950/organizacion-min_por3cl.jpg'),(37,'Are you','Empathic','2018-01-26 11:05:28',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/empatico-min_bmknmy.jpg'),(38,'Are you','Cooperative','2018-01-26 11:06:39',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/cooperativo-min_pd9n3d.jpg'),(39,'Are you','Fair','2018-01-26 11:08:46',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/justice-min_tkt0db.jpg'),(40,'Are you','Easy communication','2018-01-26 11:10:34',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/claridadMensaje-min_keuwgw.jpg'),(41,'Are you','Responsible','2018-01-26 11:11:39',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/responsable-min_njix78.jpg'),(42,'Are you','Optimistic','2018-01-26 11:12:47',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982950/optimismo-min_kplrla.jpg'),(43,'Are you','Strategic thinking','2018-01-26 11:14:11',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/estrategico-min_iumbdz.jpg'),(44,'Are you','Willing to take risks','2018-01-26 11:15:44',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982949/riesgos-min_oh6gle.jpg'),(45,'Are you','Enabler and not controller','2018-01-26 11:16:52',NULL,16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982950/HabilitadorControlador-min_ftlpqf.jpg'),(46,'Are you','Future vision','2018-01-26 11:17:34','2018-01-26 11:20:31',16,1,6,'http://res.cloudinary.com/dnakveysz/image/upload/v1516982950/visionFuturo-min_tfe1cx.jpg');
 /*!40000 ALTER TABLE `Card` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,13 +89,13 @@ DROP TABLE IF EXISTS `DeckWillEvaluatePT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `DeckWillEvaluatePT` (
-  `IdDeckWillEvaluatePT` int(11) NOT NULL AUTO_INCREMENT,
+  `IdRegistrerPTTBE` int(11) NOT NULL AUTO_INCREMENT,
   `IdDeck` int(11) DEFAULT NULL,
   `IdPTTE` int(11) DEFAULT NULL,
   `DateCreate` datetime DEFAULT NULL,
   `LastUpdate` datetime DEFAULT NULL,
-  PRIMARY KEY (`IdDeckWillEvaluatePT`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`IdRegistrerPTTBE`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,7 +104,33 @@ CREATE TABLE `DeckWillEvaluatePT` (
 
 LOCK TABLES `DeckWillEvaluatePT` WRITE;
 /*!40000 ALTER TABLE `DeckWillEvaluatePT` DISABLE KEYS */;
+INSERT INTO `DeckWillEvaluatePT` VALUES (1,4,3,'2018-01-29 08:20:27',NULL),(2,6,4,'2018-01-29 09:24:06',NULL),(3,6,5,'2018-01-29 09:24:53',NULL),(4,6,6,'2018-01-29 09:24:53',NULL),(5,6,7,'2018-01-29 09:24:53',NULL),(6,6,8,'2018-01-29 09:24:53',NULL),(7,6,9,'2018-01-29 09:24:53',NULL);
 /*!40000 ALTER TABLE `DeckWillEvaluatePT` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `DecksAnswered`
+--
+
+DROP TABLE IF EXISTS `DecksAnswered`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DecksAnswered` (
+  `idDecksAns` int(11) NOT NULL AUTO_INCREMENT,
+  `idDeck` int(11) DEFAULT NULL,
+  `idAssociate` int(11) DEFAULT NULL,
+  `dateCreate` datetime DEFAULT NULL,
+  PRIMARY KEY (`idDecksAns`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `DecksAnswered`
+--
+
+LOCK TABLES `DecksAnswered` WRITE;
+/*!40000 ALTER TABLE `DecksAnswered` DISABLE KEYS */;
+/*!40000 ALTER TABLE `DecksAnswered` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -237,7 +265,7 @@ CREATE TABLE `VotesCard` (
   `Active` tinyint(1) DEFAULT NULL,
   `idThingsPeopleToEvaluate` int(11) DEFAULT NULL,
   PRIMARY KEY (`IdRegistrer`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -246,6 +274,7 @@ CREATE TABLE `VotesCard` (
 
 LOCK TABLES `VotesCard` WRITE;
 /*!40000 ALTER TABLE `VotesCard` DISABLE KEYS */;
+INSERT INTO `VotesCard` VALUES (102,15,1,1,'2018-01-31 22:19:33',NULL,1,0),(103,15,2,1,'2018-01-31 22:19:36',NULL,1,0),(104,15,3,1,'2018-01-31 22:19:41',NULL,1,0),(105,15,4,1,'2018-01-31 22:19:47',NULL,1,0),(106,15,5,0,'2018-01-31 22:19:57',NULL,1,0),(107,15,6,0,'2018-01-31 22:20:00',NULL,1,0),(108,15,7,0,'2018-01-31 22:20:04',NULL,1,0),(109,15,8,0,'2018-01-31 22:20:08',NULL,1,0),(110,15,9,0,'2018-01-31 22:20:11',NULL,1,0),(111,15,10,0,'2018-01-31 22:20:18',NULL,1,0);
 /*!40000 ALTER TABLE `VotesCard` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -258,4 +287,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-26 14:22:02
+-- Dump completed on 2018-01-31 23:15:51

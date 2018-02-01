@@ -95,6 +95,28 @@ module.exports = [{
   }
 },
 {
+  method: 'GET',
+  path: '/xpressDeck/api/getDecksForAnsByIdUser/{idAssociate}',
+  config: {
+    handler(req, reply) {
+      const idAssociate = req.params.idAssociate;
+      log.info('Calling /xpressDeck/api/getDecksForAnsByIdUser/{idAssociate}');
+
+      deckService.getAllDecksForAnsByIdUser(idAssociate)
+        .then(function(result){
+          reply(result).code(200);
+        });
+    },
+    validate:{
+      params: {
+        idAssociate: Joi.number().required().description('Id Deck to show')
+      }
+    },
+    description: 'Get all decks avaiable to ans by id Associate',
+    tags: ['api', 'Deck'],
+  }
+},
+{
   method:'POST',
   path: '/xpressDeck/api/createOneNewDeck',
   config: {

@@ -74,6 +74,54 @@ module.exports = [{
   }
 },
 {
+  method: 'GET',
+  path: '/xpressCards/api/getCardsNoVoteYetByIdDeck/{idAssociate}&{idDeck}',
+  config: {
+    handler(req, reply) {
+      const idDeck = req.params.idDeck;
+      const idAssociate = req.params.idAssociate;
+      log.info('/xpressCards/api/getCardsNoVoteYetByIdDeck/{idAssociate}&{idDeck}');
+
+      cardsService.getCardNoVotedYetByIdDeck(idAssociate, idDeck)
+        .then(function(result){
+          reply(result).code(200);
+        });
+    },
+    validate:{
+      params: {
+        idDeck: Joi.number().required().description('Id Card search'),
+        idAssociate: Joi.number().required().description('Id associate to search')
+      }
+    },
+    description: 'Get all cards of specific deck not answered yet',
+    tags: ['api', 'Cards'],
+  }
+},
+{
+  method: 'GET',
+  path: '/xpressCards/api/getCardsNVPTByIdDeck/{idAssociate}&{idDeck}',
+  config: {
+    handler(req, reply) {
+      const idDeck = req.params.idDeck;
+      const idAssociate = req.params.idAssociate;
+      log.info('Calling /xpressCards/api/getCardsNVPTByIdDeck/{idAssociate}&{idDeck}');
+
+      cardsService.getCardNVPTByIdDeck(idAssociate, idDeck)
+        .then(function(result){
+          reply(result).code(200);
+        });
+    },
+    validate:{
+      params: {
+        idDeck: Joi.number().required().description('Id Card search'),
+        idAssociate: Joi.number().required().description('Id associate to search')
+      }
+    },
+    description: 'Get all cards of specific deck not answered yet',
+    tags: ['api', 'Cards'],
+  }
+},
+{
   method:'POST',
   path: '/xpressCards/api/createOneCard',
   config: {

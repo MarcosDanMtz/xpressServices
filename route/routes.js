@@ -8,6 +8,8 @@ const infoUserRoute         = require('./loginInfoRoute');
 const DecksAvailableInRoute = require('./decksAvailableInRoute');
 const votesCarsRoute        = require('./VotesCardsRoute');
 const peopleThingsEvalute   = require('./evaluatePTRoute');
+const PTTBEByDeck           = require('./DeckWillEvaluatePTTRoute');
+const deckAnswered          = require('./decksAnsRoute');
 
 module.exports = [].concat(
   mainRoute,
@@ -17,5 +19,7 @@ module.exports = [].concat(
   infoUserRoute,
   DecksAvailableInRoute,
   votesCarsRoute,
-  peopleThingsEvalute
+  peopleThingsEvalute,
+  PTTBEByDeck,
+  deckAnswered 
 );
