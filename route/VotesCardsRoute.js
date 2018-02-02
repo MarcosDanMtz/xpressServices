@@ -169,5 +169,51 @@ module.exports = [{
       description: 'Update one card by id',
       tags: ['api', 'Cards'],
     }
+},
+{
+  method:'GET',
+  path: '/xpressVotesCards/api/promByIdAssociate/{id}',
+  config: {
+    handler(req, reply) {
+      const idAssociate = req.params.id;
+      log.info('Calling /xpressVotesCards/api/promByIdAssociate/{id}');
+
+      VotesCardsService.getProm(idAssociate)
+        .then(function(result){
+          reply(result).code(200);
+        });
+
+    },
+    validate:{
+      params: {
+        id: Joi.number().required().description('Id Card')
+      }
+    },
+    description: 'Get all projects',
+    tags: ['api', 'Projects'],
+  }
+},
+{
+  method:'GET',
+  path: '/xpressVotesCards/api/bestWorstCaculate/{idDeck}',
+  config: {
+    handler(req, reply) {
+      const idDeck = req.params.idDeck;
+      log.info('Calling /xpressVotesCards/api/bestWorstCaculate/{idDeck}');
+
+      VotesCardsService.getBestWorts(idDeck)
+        .then(function(result){
+          reply(result).code(200);
+        });
+
+    },
+    validate:{
+      params: {
+        idDeck: Joi.number().required().description('Id deck to search')
+      }
+    },
+    description: 'Get all projects',
+    tags: ['api', 'Projects'],
+  }
 }
 ]

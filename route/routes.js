@@ -21,5 +21,5 @@ module.exports = [].concat(
   votesCarsRoute,
   peopleThingsEvalute,
   PTTBEByDeck,
-  deckAnswered 
+  deckAnswered
 );
